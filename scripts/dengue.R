@@ -21,3 +21,9 @@ cor.test(log10(DT2$`sangue de cordão__1`), log10(DT2$`soro materno__1`)) # r = 
 cor.test(log10(DT2$`sangue de cordão__2`), log10(DT2$`soro materno__2`)) # r = 0.01408245, p = 0.9164
 cor.test(log10(DT2$`sangue de cordão__3`), log10(DT2$`soro materno__3`)) # r = -0.005848243, p = 0.9652
 
+library(ggplot2)
+
+ggplot(DT, aes(`sangue de cordão`, `soro materno`)) + geom_point() + scale_x_log10() + scale_y_log10() +geom_jitter() + geom_smooth(method = "lm", se = F)
+ggplot(DT, aes(`sangue de cordão__1`, `soro materno__1`)) + geom_point() + scale_x_log10() + scale_y_log10() +geom_jitter() + geom_smooth(method = "lm", se = F)
+ggplot(DT, aes(`sangue de cordão__2`, `soro materno__2`)) + geom_point() + scale_x_log10() + scale_y_log10() +geom_jitter() + geom_smooth(method = "lm", se = F)
+ggplot(DT, aes(`sangue de cordão__3`, `soro materno__3`)) + geom_point() + scale_x_log10() + scale_y_log10() +geom_jitter() + geom_smooth(method = "lm", se = F)
