@@ -27,3 +27,8 @@ ggplot(DT, aes(`soro materno`, `sangue de cordão`)) + geom_point() + scale_x_lo
 ggplot(DT, aes(`soro materno__1`, `sangue de cordão__1`)) + geom_point() + scale_x_log10() + scale_y_log10() +geom_jitter() + geom_smooth(method = "lm", se = F)
 ggplot(DT, aes(`soro materno__2`, `sangue de cordão__2`)) + geom_point() + scale_x_log10() + scale_y_log10() +geom_jitter() + geom_smooth(method = "lm", se = F)
 ggplot(DT, aes(`soro materno__3`, `sangue de cordão__3`)) + geom_point() + scale_x_log10() + scale_y_log10() +geom_jitter() + geom_smooth(method = "lm", se = F)
+
+ggplot(DT, aes(`soro materno`, `sangue de cordão`)) + geom_point() + scale_x_log10() + scale_y_log10() +geom_jitter() + geom_smooth(span = 10, se = F)
+ggplot(DT, aes(`soro materno__1`, `sangue de cordão__1`)) + geom_point() + scale_x_log10() + scale_y_log10() +geom_jitter() + geom_smooth(span = 10, se = F)
+ggplot(DT, aes(`soro materno__2`, `sangue de cordão__2`)) + geom_point() + scale_x_log10() + scale_y_log10() +geom_jitter() + geom_smooth(span = 10, se = F)
+ggplot(DT, aes(`soro materno__3`, `sangue de cordão__3`)) + geom_point() + scale_x_log10() + scale_y_log10() +geom_jitter() + geom_smooth(span = 10, se = F)
