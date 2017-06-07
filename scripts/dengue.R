@@ -2,33 +2,32 @@ library(readxl)
 library(data.table)
 source("scripts/data-replace.R")
 
-DT <- read_excel("data-raw/concordancia dengue soro materno e sangue de cordao.xlsx", skip = 1)
+DT <- read_excel("dataset/concordancia dengue soro materno e sangue de cordao.xlsx")
 DT <- as.data.table(DT)
 DT <- DT[, lapply(.SD, data.replace, 250, ">250")]
 DT <- DT[, lapply(.SD, data.replace, 10, "<10")]
 DT <- DT[, lapply(.SD, as.numeric)]
 DT$`ID de registro` <- factor(DT$`ID de registro`)
 
-cor.test(log10(DT$`sangue de cordão`), log10(DT$`soro materno`)) # r = 0.1821501, p = 0.1712
-cor.test(log10(DT$`sangue de cordão__1`), log10(DT$`soro materno__1`)) # r = -0.04581803, p = 0.7327
-cor.test(log10(DT$`sangue de cordão__2`), log10(DT$`soro materno__2`)) # r = 0.01408245, p = 0.9164
-cor.test(log10(DT$`sangue de cordão__3`), log10(DT$`soro materno__3`)) # r = -0.005848243, p = 0.9652
+cor.test(log10(DT$sc.d1), log10(DT$sm.d1)) # r = 0.1821501, p = 0.1712
+cor.test(log10(DT$sc.d2), log10(DT$sm.d2)) # r = -0.04581803, p = 0.7327
+cor.test(log10(DT$sc.d3), log10(DT$sm.d3)) # r = 0.01408245, p = 0.9164
+cor.test(log10(DT$sc.d4), log10(DT$sm.d4)) # r = -0.005848243, p = 0.9652
 
 DT2 <- DT[, lapply(.SD, data.replace, NA, c(250, 10))]
 
-cor.test(log10(DT2$`sangue de cordão`), log10(DT2$`soro materno`)) # r = 0.1821501, p = 0.1712
-cor.test(log10(DT2$`sangue de cordão__1`), log10(DT2$`soro materno__1`)) # r = -0.04581803, p = 0.7327
-cor.test(log10(DT2$`sangue de cordão__2`), log10(DT2$`soro materno__2`)) # r = 0.01408245, p = 0.9164
-cor.test(log10(DT2$`sangue de cordão__3`), log10(DT2$`soro materno__3`)) # r = -0.005848243, p = 0.9652
-
+cor.test(log10(DT2$sc.d1), log10(DT2$sm.d1)) # r = 0.1821501, p = 0.1712
+cor.test(log10(DT2$sc.d2), log10(DT2$sm.d2)) # r = -0.04581803, p = 0.7327
+cor.test(log10(DT2$sc.d3), log10(DT2$sm.d3)) # r = 0.01408245, p = 0.9164
+cor.test(log10(DT2$sc.d4), log10(DT2$sm.d4)) # r = -0.005848243, p = 0.9652
 library(ggplot2)
 
-ggplot(DT, aes(`soro materno`, `sangue de cordão`)) + geom_point() + scale_x_log10() + scale_y_log10() +geom_jitter() + geom_smooth(method = "lm", se = F)
-ggplot(DT, aes(`soro materno__1`, `sangue de cordão__1`)) + geom_point() + scale_x_log10() + scale_y_log10() +geom_jitter() + geom_smooth(method = "lm", se = F)
-ggplot(DT, aes(`soro materno__2`, `sangue de cordão__2`)) + geom_point() + scale_x_log10() + scale_y_log10() +geom_jitter() + geom_smooth(method = "lm", se = F)
-ggplot(DT, aes(`soro materno__3`, `sangue de cordão__3`)) + geom_point() + scale_x_log10() + scale_y_log10() +geom_jitter() + geom_smooth(method = "lm", se = F)
+ggplot(DT, aes(sm.d1, sc.d1)) + geom_point() + scale_x_log10() + scale_y_log10() +geom_jitter() + geom_smooth(method = "lm", se = F)
+ggplot(DT, aes(sm.d2, sc.d2)) + geom_point() + scale_x_log10() + scale_y_log10() +geom_jitter() + geom_smooth(method = "lm", se = F)
+ggplot(DT, aes(sm.d3, sc.d3)) + geom_point() + scale_x_log10() + scale_y_log10() +geom_jitter() + geom_smooth(method = "lm", se = F)
+ggplot(DT, aes(sm.d4, sc.d4)) + geom_point() + scale_x_log10() + scale_y_log10() +geom_jitter() + geom_smooth(method = "lm", se = F)
 
-ggplot(DT, aes(`soro materno`, `sangue de cordão`)) + geom_point() + scale_x_log10() + scale_y_log10() +geom_jitter() + geom_smooth(span = 10, se = F)
-ggplot(DT, aes(`soro materno__1`, `sangue de cordão__1`)) + geom_point() + scale_x_log10() + scale_y_log10() +geom_jitter() + geom_smooth(span = 10, se = F)
-ggplot(DT, aes(`soro materno__2`, `sangue de cordão__2`)) + geom_point() + scale_x_log10() + scale_y_log10() +geom_jitter() + geom_smooth(span = 10, se = F)
-ggplot(DT, aes(`soro materno__3`, `sangue de cordão__3`)) + geom_point() + scale_x_log10() + scale_y_log10() +geom_jitter() + geom_smooth(span = 10, se = F)
+ggplot(DT, aes(sm.d1, sc.d1)) + geom_point() + scale_x_log10() + scale_y_log10() +geom_jitter() + geom_smooth(span = 10, se = F)
+ggplot(DT, aes(sm.d2, sc.d2)) + geom_point() + scale_x_log10() + scale_y_log10() +geom_jitter() + geom_smooth(span = 10, se = F)
+ggplot(DT, aes(sm.d3, sc.d3)) + geom_point() + scale_x_log10() + scale_y_log10() +geom_jitter() + geom_smooth(span = 10, se = F)
+ggplot(DT, aes(sm.d4, sc.d4)) + geom_point() + scale_x_log10() + scale_y_log10() +geom_jitter() + geom_smooth(span = 10, se = F)
