@@ -7,6 +7,7 @@ DT <- as.data.table(DT)
 DT <- DT[, lapply(.SD, data.replace, 250, ">250")]
 DT <- DT[, lapply(.SD, data.replace, 10, "<10")]
 DT <- DT[, lapply(.SD, as.numeric)]
+setkey(DT, "ID de registro")
 DT$`ID de registro` <- factor(DT$`ID de registro`)
 
 cor.test(log10(DT$sc.d1), log10(DT$sm.d1)) # r = 0.1821501, p = 0.1712
