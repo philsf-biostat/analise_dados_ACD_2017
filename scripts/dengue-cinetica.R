@@ -5,6 +5,7 @@ setkey(BB, "ID de registro")
 BB$`ID de registro` <- factor(BB$`ID de registro`)
 BB$Idade.cat <- cut(BB$Idade, breaks = c(seq(0, 12, 2), Inf), right = F, 
                     labels = c("nasc.", "2m a 4 m", "4m a 6m", "6m a 8m","8m a 10m", "10m a 12m", "12m ou mais"), ordered_result = T)
+BB$Titulo.cat  <- cut(BB$Titulo, c(0,250,Inf), right = F, labels = c("<250", ">250"), ordered_result = T)
 
 le <- BB[soroconversao == "não"]
 
@@ -42,3 +43,12 @@ title("Sem soroconversao", ylab = "Título", xlab = "Idade (meses)")
 dev.off()
 
 # ggplot(le, aes(Idade.cat, Titulo)) + geom_boxplot() + geom_hline(yintercept = 50, col = "red", size = 1.5) + scale_y_log10()
+png("figuras/soroconv-dengue1.png", 500, 800)
+par(mfrow = c(3,1))
+barplot(with(BB[soroconversao == "não"], table(Titulo.cat, Idade.cat )), beside = T, legend.text = T, ylim = c(0, 60))
+title(("não"))
+barplot(with(BB[soroconversao == "sim"], table(Titulo.cat, Idade.cat )), beside = T, legend.text = T, ylim = c(0, 60))
+title(("sim"))
+barplot(with(BB, table(Titulo.cat, Idade.cat )), beside = T, legend.text = T, ylim = c(0, 60))
+title("xerau")
+dev.off()
