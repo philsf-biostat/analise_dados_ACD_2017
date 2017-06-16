@@ -3,6 +3,7 @@ clean.data <- function(dataframe) {
   dataframe <- data.table(dataframe)
   dataframe$soroconversao <- factor(dataframe$soroconversao)
   setkey(dataframe, "ID de registro")
+  dataframe$Coleta <- ordered(dataframe$Coleta)
   dataframe$`ID de registro` <- factor(dataframe$`ID de registro`)
   dataframe$Idade.cat <- cut(dataframe$Idade, breaks = c(seq(0, 12, 2), Inf), right = F, 
                       labels = c("nasc.", "2m a 4 m", "4m a 6m", "6m a 8m","8m a 10m", "10m a 12m", "12m ou mais"), ordered_result = T)
