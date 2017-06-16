@@ -30,14 +30,22 @@ cor.test(log10(DT2$sc.d4), log10(DT2$sm.d4)) # r = -0.005848243, p = 0.9652
 library(ggplot2)
 
 ggplot(DT, aes(sm.d1, sc.d1)) + geom_point() + scale_x_log10() + scale_y_log10() +geom_jitter() + geom_smooth(method = "lm", se = F)
+ggsave("figuras/dengue1-linear.png")
 ggplot(DT, aes(sm.d2, sc.d2)) + geom_point() + scale_x_log10() + scale_y_log10() +geom_jitter() + geom_smooth(method = "lm", se = F)
+ggsave("figuras/dengue2-linear.png")
 ggplot(DT, aes(sm.d3, sc.d3)) + geom_point() + scale_x_log10() + scale_y_log10() +geom_jitter() + geom_smooth(method = "lm", se = F)
+ggsave("figuras/dengue3-linear.png")
 ggplot(DT, aes(sm.d4, sc.d4)) + geom_point() + scale_x_log10() + scale_y_log10() +geom_jitter() + geom_smooth(method = "lm", se = F)
+ggsave("figuras/dengue4-linear.png")
 
 ggplot(DT, aes(sm.d1, sc.d1)) + geom_point() + scale_x_log10() + scale_y_log10() +geom_jitter() + geom_smooth(span = 10, se = F)
+ggsave("figuras/dengue1-naolinear.png")
 ggplot(DT, aes(sm.d2, sc.d2)) + geom_point() + scale_x_log10() + scale_y_log10() +geom_jitter() + geom_smooth(span = 10, se = F)
+ggsave("figuras/dengue2-naolinear.png")
 ggplot(DT, aes(sm.d3, sc.d3)) + geom_point() + scale_x_log10() + scale_y_log10() +geom_jitter() + geom_smooth(span = 10, se = F)
+ggsave("figuras/dengue3-naolinear.png")
 ggplot(DT, aes(sm.d4, sc.d4)) + geom_point() + scale_x_log10() + scale_y_log10() +geom_jitter() + geom_smooth(span = 10, se = F)
+ggsave("figuras/dengue4-naolinear.png")
 
 ylim <- c(0,60)
 png("figuras/hist-dengue1.png", 700, 500); par(mfrow = c(1,2))
