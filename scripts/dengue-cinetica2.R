@@ -9,9 +9,11 @@ kin.plot <- function(dataframe) {
     scale_color_brewer(palette="Dark2")
 }
 
-kin.plot(BB1) + geom_smooth(method = "lm")
-
-bb1 <- kin.plot(BB1[soroconversao == "não"])
-bb2 <- kin.plot(BB2[soroconversao == "não"])
-bb3 <- kin.plot(BB3[soroconversao == "não"])
-bb4 <- kin.plot(BB4[soroconversao == "não"])
+bb1 <- kin.plot(BB1) + geom_smooth(method = "lm")
+ggsave("figuras/cinetica-dengue1.png")
+bb2 <- kin.plot(BB2) + geom_smooth(method = "lm")
+ggsave("figuras/cinetica-dengue2.png")
+bb3 <- kin.plot(BB3) + geom_smooth(method = "lm")
+ggsave("figuras/cinetica-dengue3.png")
+bb4 <- kin.plot(BB4) + geom_smooth(method = "lm")
+ggsave("figuras/cinetica-dengue4.png")
