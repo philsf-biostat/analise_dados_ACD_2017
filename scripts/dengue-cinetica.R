@@ -7,23 +7,23 @@ BB$Idade.cat <- cut(BB$Idade, breaks = c(seq(0, 12, 2), Inf), right = F,
                     labels = c("nasc.", "2m a 4 m", "4m a 6m", "6m a 8m","8m a 10m", "10m a 12m", "12m ou mais"), ordered_result = T)
 BB$Titulo.cat  <- cut(BB$Titulo, c(0,250,Inf), right = F, labels = c("<250", ">250"), ordered_result = T)
 
-le <- BB[soroconversao == "não"]
+BB.not <- BB[soroconversao == "não"]
 
 # la <- data.table(
-#   ID = c(le$`ID de registro`,
-#          le$`ID de registro`,
-#          le$`ID de registro`,
-#          le$`ID de registro`),
+#   ID = c(BB.not$`ID de registro`,
+#          BB.not$`ID de registro`,
+#          BB.not$`ID de registro`,
+#          BB.not$`ID de registro`),
 # 
-#   Idade=c(rep(0, length(le$`ID de registro`)),
-#           le$`IDADE EM MESES`,
-#           le$`IDADE EM MESES 2`,
-#           le$`IDADE EM MESES 3`),
+#   Idade=c(rep(0, length(BB.not$`ID de registro`)),
+#           BB.not$`IDADE EM MESES`,
+#           BB.not$`IDADE EM MESES 2`,
+#           BB.not$`IDADE EM MESES 3`),
 # 
-#   Titulo = c(le$SC,
-#              le$`título da coleta 1`,
-#              le$`título da coleta 2`,
-#              le$`coleta 3`)
+#   Titulo = c(BB.not$SC,
+#              BB.not$`título da coleta 1`,
+#              BB.not$`título da coleta 2`,
+#              BB.not$`coleta 3`)
 # )
 
 # la[`soroconversão 1` == "não" & `soroconversão 2` == "não" & `soroconversão 3` == "não"]
@@ -36,13 +36,13 @@ with(BB, plot(Idade.cat, Titulo, log = "y"))
 abline(h = 50, lwd = 2, col = "red")
 title("Todos", ylab = "Título", xlab = "Idade (meses)")
 
-with(le, plot(Idade.cat, Titulo, log = "y"))
+with(BB.not, plot(Idade.cat, Titulo, log = "y"))
 abline(h = 50, lwd = 2, col = "red")
 title("Sem soroconversao", ylab = "Título", xlab = "Idade (meses)")
 
 dev.off()
 
-# ggplot(le, aes(Idade.cat, Titulo)) + geom_boxplot() + geom_hline(yintercept = 50, col = "red", size = 1.5) + scale_y_log10()
+# ggplot(BB.not, aes(Idade.cat, Titulo)) + geom_boxplot() + geom_hline(yintercept = 50, col = "red", size = 1.5) + scale_y_log10()
 png("figuras/soroconv-dengue1.png", 500, 800)
 par(mfrow = c(3,1))
 barplot(with(BB[soroconversao == "não"], table(Titulo.cat, Idade.cat )), beside = T, legend.text = T, ylim = c(0, 60))
