@@ -1,13 +1,5 @@
-BB <- read_excel("dataset/BANCO BEBES DENGUE ESTATISTICO_12062017_kaplan Meier.xlsx", 2)
-BB <- data.table(BB)
-BB$soroconversao <- factor(BB$soroconversao)
-setkey(BB, "ID de registro")
-BB$`ID de registro` <- factor(BB$`ID de registro`)
-BB$Idade.cat <- cut(BB$Idade, breaks = c(seq(0, 12, 2), Inf), right = F, 
-                    labels = c("nasc.", "2m a 4 m", "4m a 6m", "6m a 8m","8m a 10m", "10m a 12m", "12m ou mais"), ordered_result = T)
-BB$Titulo.cat  <- cut(BB$Titulo, c(0,250,Inf), right = F, labels = c("<250", ">250"), ordered_result = T)
-
-BB.not <- BB[soroconversao == "não"]
+# Ler BB1, BB2, BB3, BB4
+source("scripts/dengue-cinetica-input.R")
 
 # la <- data.table(
 #   ID = c(BB.not$`ID de registro`,
@@ -32,23 +24,23 @@ BB.not <- BB[soroconversao == "não"]
 png("figuras/dengue-cinetica.png")
 par(mfrow = c(1,2))
 
-with(BB, plot(Idade.cat, Titulo, log = "y"))
+with(BB1, plot(Idade.cat, Titulo, log = "y"))
 abline(h = 50, lwd = 2, col = "red")
 title("Todos", ylab = "Título", xlab = "Idade (meses)")
 
-with(BB.not, plot(Idade.cat, Titulo, log = "y"))
+with(BB1[soroconversao == "não"], plot(Idade.cat, Titulo, log = "y"))
 abline(h = 50, lwd = 2, col = "red")
 title("Sem soroconversao", ylab = "Título", xlab = "Idade (meses)")
 
 dev.off()
 
-# ggplot(BB.not, aes(Idade.cat, Titulo)) + geom_boxplot() + geom_hline(yintercept = 50, col = "red", size = 1.5) + scale_y_log10()
+# ggplot(BB1[soroconversao == "não"], aes(Idade.cat, Titulo)) + geom_boxplot() + geom_hline(yintercept = 50, col = "red", size = 1.5) + scale_y_log10()
 png("figuras/soroconv-dengue1.png", 500, 800)
 par(mfrow = c(3,1))
-barplot(with(BB[soroconversao == "não"], table(Titulo.cat, Idade.cat )), beside = T, legend.text = T, ylim = c(0, 60))
+barplot(with(BB1[soroconversao == "não"], table(Titulo.cat, Idade.cat )), beside = T, legend.text = T, ylim = c(0, 60))
 title(("não"))
-barplot(with(BB[soroconversao == "sim"], table(Titulo.cat, Idade.cat )), beside = T, legend.text = T, ylim = c(0, 60))
+barplot(with(BB1[soroconversao == "sim"], table(Titulo.cat, Idade.cat )), beside = T, legend.text = T, ylim = c(0, 60))
 title(("sim"))
-barplot(with(BB, table(Titulo.cat, Idade.cat )), beside = T, legend.text = T, ylim = c(0, 60))
+barplot(with(BB1, table(Titulo.cat, Idade.cat )), beside = T, legend.text = T, ylim = c(0, 60))
 title("xerau")
 dev.off()
