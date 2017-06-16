@@ -1,6 +1,7 @@
 library(data.table)
 clean.data <- function(dataframe) {
   dataframe <- data.table(dataframe)
+  dataframe <- dataframe[Idade <= 12]
   dataframe$soroconversao <- factor(dataframe$soroconversao)
   dataframe$Coleta <- ordered(dataframe$Coleta)
   # setkey(dataframe, "ID de registro")
