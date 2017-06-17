@@ -1,3 +1,4 @@
+library(readxl)
 library(data.table)
 clean.data <- function(dataframe) {
   dataframe <- data.table(dataframe)
