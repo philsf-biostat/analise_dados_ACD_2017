@@ -10,7 +10,7 @@ kin.plot <- function(dataframe) {
     geom_hline(yintercept = c(10, 1250), linetype = "dashed") +
     # geom_boxplot() +
     geom_hline(yintercept = 50, col = "red") +
-    geom_jitter(width = .1, alpha = .15) +
+    geom_jitter(width = .1, alpha = .3) +
     geom_smooth(method = "lm") +
     stat_summary(fun.y = geomean, geom = "point", mapping = aes(y = Titulo), size = 2) +
     scale_color_brewer(palette="Dark2") +
