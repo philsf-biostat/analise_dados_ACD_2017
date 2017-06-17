@@ -1,6 +1,7 @@
 library(readxl)
 library(data.table)
 clean.data <- function(dataframe) {
+  dataframe$Titulo <- data.replace(dataframe$Titulo, 2500, 1250)
   dataframe <- data.table(dataframe)
   dataframe <- dataframe[Idade <= 12]
   dataframe$soroconversao <- factor(dataframe$soroconversao)
