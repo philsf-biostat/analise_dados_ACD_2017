@@ -12,7 +12,8 @@ kin.plot <- function(dataframe) {
     geom_jitter(width = .1, alpha = .15) +
     geom_smooth(method = "lm") +
     stat_summary(fun.y = geomean, geom = "point", mapping = aes(y = Titulo), size = 2) +
-    scale_color_brewer(palette="Dark2")
+    scale_color_brewer(palette="Dark2") +
+    theme(plot.subtitle = element_text(hjust = 0.5))
 }
 
 bb1 <- kin.plot(BB1) + labs(title = "A", subtitle = "Cinética de DENV1")
