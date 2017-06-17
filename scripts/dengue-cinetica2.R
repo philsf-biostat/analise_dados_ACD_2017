@@ -1,3 +1,4 @@
+library(ggplot2)
 kin.plot <- function(dataframe) {
   ggplot(dataframe, aes(Idade, Titulo, color = soroconversao)) +
     scale_y_log10() +
