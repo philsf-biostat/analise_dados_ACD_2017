@@ -1,5 +1,6 @@
 source("../../PDPIV/bridging/bridging-analysis.R")
 source("../../PDPIV/bridging/plots.R")
+source("scripts/dengue.R")
 
 dados1 <- data.table(Sample= DT$`ID de registro`,
                     NEW = DT[, sc.d1],
