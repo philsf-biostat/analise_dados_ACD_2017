@@ -1,3 +1,5 @@
+source("scripts/dengue-cinetica-input.R")
+source("../../PDPIV/bridging/bridging-analysis.R")
 library(ggplot2)
 kin.plot <- function(dataframe) {
   ggplot(dataframe, aes(Idade, Titulo,

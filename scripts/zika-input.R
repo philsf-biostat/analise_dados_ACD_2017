@@ -1,3 +1,4 @@
+library(lubridate)
 source("scripts/data-replace.R")
 ZK <- read_excel("dataset/Banco AC ZIKA PRNT 50 x 90.xlsx", na = "ND")
 ZK <- data.table(ZK)

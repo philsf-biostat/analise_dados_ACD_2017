@@ -1,5 +1,6 @@
 library(readxl)
 library(data.table)
+source("scripts/data-replace.R")
 clean.data <- function(dataframe) {
   dataframe$Titulo <- data.replace(dataframe$Titulo, 2500, 1250)
   dataframe <- data.table(dataframe)
