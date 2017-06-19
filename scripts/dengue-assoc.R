@@ -1,14 +1,13 @@
 source("scripts/dengue-assoc-input.R")
-# cor.test(log10(DT$sc.d1), log10(DT$sm.d1)) # r = 0.1821501, p = 0.1712
-# cor.test(log10(DT$sc.d2), log10(DT$sm.d2)) # r = -0.04581803, p = 0.7327
-# cor.test(log10(DT$sc.d3), log10(DT$sm.d3)) # r = 0.01408245, p = 0.9164
-# cor.test(log10(DT$sc.d4), log10(DT$sm.d4)) # r = -0.005848243, p = 0.9652
+cor.test(log10(DT$sc.d1), log10(DT$sm.d1)) # r = 0.1821501, p = 0.1712
+cor.test(log10(DT$sc.d2), log10(DT$sm.d2)) # r = -0.04581803, p = 0.7327
+cor.test(log10(DT$sc.d3), log10(DT$sm.d3)) # r = 0.01408245, p = 0.9164
+cor.test(log10(DT$sc.d4), log10(DT$sm.d4)) # r = -0.005848243, p = 0.9652
 
-cor.test(DT$sc.d1, DT$sm.d1, method = "spearman") # rho = 0.5262571, p = <0.001
-cor.test(DT$sc.d2, DT$sm.d2, method = "spearman") # rho = 0.2761045, p = 0.0359
-cor.test(DT$sc.d3, DT$sm.d3, method = "spearman") # rho = 0.5174988, p = <0.001
-cor.test(DT$sc.d4, DT$sm.d4, method = "spearman") # rho = 0.5062238, p = <0.001
-
+# cor.test(DT$sc.d1, DT$sm.d1, method = "spearman") # rho = 0.5262571, p = <0.001
+# cor.test(DT$sc.d2, DT$sm.d2, method = "spearman") # rho = 0.2761045, p = 0.0359
+# cor.test(DT$sc.d3, DT$sm.d3, method = "spearman") # rho = 0.5174988, p = <0.001
+# cor.test(DT$sc.d4, DT$sm.d4, method = "spearman") # rho = 0.5062238, p = <0.001
 
 library(ggplot2)
 
