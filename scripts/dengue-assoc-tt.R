@@ -61,5 +61,9 @@ gmr.tab.return <- function(quant.results, digits = 2) {
   gmr
 }
 
-tt.tabela <- rbind(gmr.tab.return(qnresults1), gmr.tab.return(qnresults2), gmr.tab.return(qnresults3), gmr.tab.return(qnresults4))
-pander(tt.tabela, table.style = 'rmarkdown')
+tt.tabela <- rbind(DENV1 = gmr.tab.return(qnresults1),
+                   DENV2 = gmr.tab.return(qnresults2),
+                   DENV3 = gmr.tab.return(qnresults3),
+                   DENV4 = gmr.tab.return(qnresults4))
+panderOptions('table.style', 'rmarkdown')
+pander(tt.tabela, split.table = 120)
