@@ -18,6 +18,12 @@ output:
 
 ### Associação
 
+![**Figura xx** - Associação entre títulos de anticorpos neutralizantes de soro materno e sangue de cordão (linear)](../figuras/assoc-linear-all.png)
+
+![**Figura xx** - Associação entre títulos de anticorpos neutralizantes de soro materno e sangue de cordão (não-linear)](../figuras/assoc-nlinear-all.png)
+
+Obs: Escolher apenas um dos painés de figura acima! Não utilizar os dois!
+
 ### Cinética
 
 #### Decaimento dos títulos de anticorpos neutralizantes
