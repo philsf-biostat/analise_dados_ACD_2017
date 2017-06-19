@@ -29,7 +29,7 @@ Os valores de correlação de Pearson para as associações são:
 
 #### Regressão de Deming
 
-![**Figura xx** - Associação entre títulos de anticorpos neutralizantes de soro materno e sangue de cordão (linear)](../figuras/assoc-linear-all.png)
+![**Figura xx** - Associação entre títulos de anticorpos neutralizantes de soro materno e sangue de cordão. As retas tracejadas são os limites de diluição; as retas vermelhas correspondem ao corte de 50; a reta azul é a reta de regressão de Deming.](../figuras/assoc-linear-all.png)
 
 <!-- ![**Figura xx** - Associação entre títulos de anticorpos neutralizantes de soro materno e sangue de cordão (não-linear)](../figuras/assoc-nlinear-all.png) -->
 
