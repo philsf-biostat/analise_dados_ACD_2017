@@ -42,6 +42,26 @@ theme_set(theme_gray())
 plot_grid(bb1, bb2, bb3, bb4, labels = "AUTO")
 ggsave("figuras/cinetica-dengue-all.png", width = 12, height = 14)
 
+m1 <- with(BB1[soroconversao == "não"], lm(log10(Titulo) ~ Idade) )
+m2 <- with(BB2[soroconversao == "não"], lm(log10(Titulo) ~ Idade) )
+m3 <- with(BB3[soroconversao == "não"], lm(log10(Titulo) ~ Idade) )
+m4 <- with(BB4[soroconversao == "não"], lm(log10(Titulo) ~ Idade) )
+
+m1.2 <- with(BB1[soroconversao == "não"], lm(log10(Titulo) ~ poly(Idade, 2)) )
+m2.2 <- with(BB2[soroconversao == "não"], lm(log10(Titulo) ~ poly(Idade, 2)) )
+m3.2 <- with(BB3[soroconversao == "não"], lm(log10(Titulo) ~ poly(Idade, 2)) )
+m4.2 <- with(BB4[soroconversao == "não"], lm(log10(Titulo) ~ poly(Idade, 2)) )
+
+m1.3 <- with(BB1[soroconversao == "não"], lm(log10(Titulo) ~ poly(Idade, 3)) )
+m2.3 <- with(BB2[soroconversao == "não"], lm(log10(Titulo) ~ poly(Idade, 3)) )
+m3.3 <- with(BB3[soroconversao == "não"], lm(log10(Titulo) ~ poly(Idade, 3)) )
+m4.3 <- with(BB4[soroconversao == "não"], lm(log10(Titulo) ~ poly(Idade, 3)) )
+
+anova(m1, m1.2, m1.3)
+anova(m2, m2.2, m2.3)
+anova(m3, m3.2, m3.3)
+anova(m4, m4.2, m4.3)
+
 # obsoleto ----------------------------------------------------------------
 
 # la <- data.table(
