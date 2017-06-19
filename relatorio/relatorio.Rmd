@@ -20,6 +20,8 @@ output:
 
 ### Cinética
 
+![**Figura xx** - Cinética de decaimento de títulos de anticorpos neutralizantes](../figuras/cinetica-dengue-all.png)
+
 #### Tempo de sororreversão
 
 ##### Tempo de corte de títulos 50 e 10
