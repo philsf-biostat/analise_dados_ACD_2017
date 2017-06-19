@@ -19,7 +19,7 @@ dengue.assoc.lin.plot <- function(x,y) {
   slp <- model[2]
   ggplot(DT, aes(x, y)) +
     scale_x_log10() + scale_y_log10() +
-    geom_jitter(alpha = .3) +
+    geom_jitter(width = .05, height = .05, alpha = .25) +
     geom_abline(intercept = icp, slope = slp, size= 1, col = "blue") +
     # geom_smooth(method = "lm", se = F) +
     xlab("Título soro materno") + ylab("Título sangue de cordão") +
