@@ -45,17 +45,17 @@ dengue.assoc.nl.plot <- function(x,y) {
     theme(plot.subtitle = element_text(hjust = .5))
 }
 
-d1.assoc.nl <- dengue.assoc.nl.plot(DT$sm.d1, DT$sc.d1) + labs(title = "A", subtitle = "DENV1")
-ggsave("figuras/assoc-nlinear-dengue1.png")
-d2.assoc.nl <- dengue.assoc.nl.plot(DT$sm.d2, DT$sc.d2) + labs(title = "B", subtitle = "DENV2")
-ggsave("figuras/assoc-nlinear-dengue2.png")
-d3.assoc.nl <- dengue.assoc.nl.plot(DT$sm.d3, DT$sc.d3) + labs(title = "C", subtitle = "DENV3")
-ggsave("figuras/assoc-nlinear-dengue3.png")
-d4.assoc.nl <- dengue.assoc.nl.plot(DT$sm.d4, DT$sc.d4) + labs(title = "D", subtitle = "DENV4")
-ggsave("figuras/assoc-nlinear-dengue4.png")
-
-plot_grid(d1.assoc.nl, d2.assoc.nl, d3.assoc.nl, d4.assoc.nl, labels = "AUTO")
-ggsave("figuras/assoc-nlinear-all.png", width = 12, height = 14)
+# d1.assoc.nl <- dengue.assoc.nl.plot(DT$sm.d1, DT$sc.d1) + labs(title = "A", subtitle = "DENV1")
+# ggsave("figuras/assoc-nlinear-dengue1.png")
+# d2.assoc.nl <- dengue.assoc.nl.plot(DT$sm.d2, DT$sc.d2) + labs(title = "B", subtitle = "DENV2")
+# ggsave("figuras/assoc-nlinear-dengue2.png")
+# d3.assoc.nl <- dengue.assoc.nl.plot(DT$sm.d3, DT$sc.d3) + labs(title = "C", subtitle = "DENV3")
+# ggsave("figuras/assoc-nlinear-dengue3.png")
+# d4.assoc.nl <- dengue.assoc.nl.plot(DT$sm.d4, DT$sc.d4) + labs(title = "D", subtitle = "DENV4")
+# ggsave("figuras/assoc-nlinear-dengue4.png")
+#
+# plot_grid(d1.assoc.nl, d2.assoc.nl, d3.assoc.nl, d4.assoc.nl, labels = "AUTO")
+# ggsave("figuras/assoc-nlinear-all.png", width = 12, height = 14)
 
 ylim <- c(0,60)
 png("figuras/hist-dengue1.png", 700, 500); par(mfrow = c(1,2))
