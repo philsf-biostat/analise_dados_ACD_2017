@@ -28,13 +28,13 @@ kin.plot <- function(dataframe) {
 }
 
 bb1 <- kin.plot(BB1) + labs(title = "A", subtitle = "Cinética de DENV1")
-ggsave("figuras/cinetica-dengue1.png")
+ggsave("figuras/cinetica-dengue1.png", width = 6, height = 7)
 bb2 <- kin.plot(BB2) + labs(title = "B", subtitle = "Cinética de DENV2")
-ggsave("figuras/cinetica-dengue2.png")
+ggsave("figuras/cinetica-dengue2.png", width = 6, height = 7)
 bb3 <- kin.plot(BB3) + labs(title = "C", subtitle = "Cinética de DENV3")
-ggsave("figuras/cinetica-dengue3.png")
+ggsave("figuras/cinetica-dengue3.png", width = 6, height = 7)
 bb4 <- kin.plot(BB4) + labs(title = "D", subtitle = "Cinética de DENV4")
-ggsave("figuras/cinetica-dengue4.png")
+ggsave("figuras/cinetica-dengue4.png", width = 6, height = 7)
 
 
 
