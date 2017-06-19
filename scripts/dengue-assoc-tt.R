@@ -54,3 +54,13 @@ gmr.print(qnresults1)
 gmr.print(qnresults2)
 gmr.print(qnresults3)
 gmr.print(qnresults4)
+gmr.tab.return <- function(quant.results, digits = 2) {
+  gmr <- lapply(quant.results[c("N", "GM.NEW", "GM.REF", "GMR.est", "GMR.CI")], round, digits)
+  gmr$GMR.est <- gmr$GMR.est*100
+  gmr$GMR.CI <- gmr$GMR.CI*100
+  gmr$GMR.CI <- format.interval(gmr$GMR.CI, digits = digits)
+  gmr <- data.frame(gmr)
+  names(gmr) <- c("N", "MG Sangue Cordão", "MG Soro Materno", "TT (%)", "TT IC 95%")
+  # pander(t(gmr), split.cells = 14, digits = digits)
+  gmr
+}
