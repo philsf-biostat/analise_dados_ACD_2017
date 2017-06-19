@@ -1,1 +1,1 @@
-# Projeto de doutorado Ana Claudia Machado
+# Projeto de doutorado Ana Claudia Duarte
