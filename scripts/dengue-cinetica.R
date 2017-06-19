@@ -18,7 +18,7 @@ kin.plot <- function(dataframe) {
     geom_jitter(width = .1, alpha = .3) +
     geom_smooth(method = "lm", size = .7) +
     stat_summary(fun.y = geomean, geom = "point", mapping = aes(y = Titulo), size = 2) +
-    stat_poly_eq(formula = formula,
+    stat_poly_eq(formula = y~x,
                  aes(label = paste(paste(..eq.label.., ..rr.label.., sep = "~~~~"))),
                  parse = TRUE,
                  label.x.npc = .675) +
