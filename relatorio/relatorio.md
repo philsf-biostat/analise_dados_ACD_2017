@@ -1,14 +1,6 @@
----
-title: "Relatório"
-author: "Felipe Figueiredo"
-date: "June 18, 2017"
-output:
-  html_document:
-    number_sections: yes
-    toc: yes
-  word_document:
-    toc: yes
----
+# Relatório
+Felipe Figueiredo  
+June 18, 2017  
 
 # Métodos
 
