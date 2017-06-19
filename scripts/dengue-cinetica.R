@@ -37,6 +37,7 @@ bb4 <- kin.plot(BB4) + labs(title = "D", subtitle = "Cinética de DENV4")
 ggsave("figuras/cinetica-dengue4.png", width = 6, height = 7)
 
 library(cowplot)
+theme_set(theme_gray())
 plot_grid(bb1, bb2, bb3, bb4, labels = "AUTO")
 ggsave("figuras/cinetica-dengue-all.png", width = 12, height = 14)
 
