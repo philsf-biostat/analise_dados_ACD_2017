@@ -18,7 +18,8 @@ dengue.assoc.lin.plot <- function(x,y) {
   icp <- model[1]
   slp <- model[2]
   ggplot(DT, aes(x, y)) +
-    scale_x_log10() + scale_y_log10() +
+    scale_x_log10(limits = c(5, 3500), breaks = c(10, 50, 100, 1000, 1250)) +
+    scale_y_log10(limits = c(5, 3500), breaks = c(10, 50, 100, 1000, 1250)) +
     geom_jitter(width = .05, height = .05, alpha = .25) +
     geom_abline(intercept = icp, slope = slp, size= 1, col = "blue") +
     # geom_smooth(method = "lm", se = F) +
