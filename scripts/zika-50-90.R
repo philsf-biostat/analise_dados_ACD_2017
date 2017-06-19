@@ -1,6 +1,5 @@
 source("scripts/zika-input.R")
 
-
 qual.cutoff.min <- 10
 # qual.cutoff.min.ref <- 10
 # qual.cutoff.min.new <- 50
@@ -9,6 +8,8 @@ quant.cutoff.max <- 31250
 
 source("../../PDPIV/bridging/bridging-analysis.R")
 source("../../PDPIV/bridging/plots.R")
+
+# zika 50 x zika 90 2015 --------------------------------------------------
 
 ZK.2015.brid <- ZK.2015[,.(Sample = reg, REF = `PRNT 50`, NEW = `PRNT 90`)]
 zkqldata <- qual.data(ZK.2015.brid)
@@ -23,6 +24,20 @@ deming.plot(zkqndata, zkqnresults)
 bias.plot(zkqndata, zkqnresults)
 ratios.plot(zkqndata, zkqnresults)
 
+# zika 50 x zika 90 2016 --------------------------------------------------
+
+ZK.2016.brid <- ZK.2016[,.(Sample = reg, REF = `PRNT 50`, NEW = `PRNT 90`)]
+zkqldata <- qual.data(ZK.2016.brid)
+zkqndata <- quant.data(ZK.2016.brid)
+
+zkqlresults <- qual.analysis(zkqldata)
+zkqnresults <- quant.analysis(zkqndata)
+
+table.print(zkqlresults)
+
+deming.plot(zkqndata, zkqnresults)
+bias.plot(zkqndata, zkqnresults)
+ratios.plot(zkqndata, zkqnresults)
 
 # zika 90 x dengue 50 2015 ------------------------------------------------
 
