@@ -11,12 +11,17 @@ cor.test(log10(DT$sc.d4), log10(DT$sm.d4)) # r = 0.2314973, p = 0.0804
 # cor.test(DT$sc.d4, DT$sm.d4, method = "spearman") # rho = 0.5062238, p = <0.001
 
 library(ggplot2)
+library(MethComp)
 
 dengue.assoc.lin.plot <- function(x,y) {
+  model <- Deming(log10(x), log10(y))
+  icp <- model[1]
+  slp <- model[2]
   ggplot(DT, aes(x, y)) +
     scale_x_log10() + scale_y_log10() +
     geom_jitter(alpha = .3) +
-    geom_smooth(method = "lm", se = F) +
+    geom_abline(intercept = icp, slope = slp, size= 1, col = "blue") +
+    # geom_smooth(method = "lm", se = F) +
     xlab("Título soro materno") + ylab("Título sangue de cordão") +
     theme(plot.subtitle = element_text(hjust = .5))
 }
