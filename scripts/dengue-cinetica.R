@@ -4,7 +4,7 @@ source("scripts/dengue-cinetica-input.R")
 library(ggplot2)
 library(ggpmisc)
 
-kin.plot <- function(dataframe) {
+kin.plot <- function(dataframe, degree = 1, ...) {
   ggplot(dataframe, aes(Idade, Titulo,
                         color = soroconversao,
                         group = soroconversao,
@@ -16,9 +16,9 @@ kin.plot <- function(dataframe) {
     # geom_boxplot() +
     geom_hline(yintercept = 50, col = "red") +
     geom_jitter(width = .1, alpha = .3) +
-    geom_smooth(method = "lm", size = .7) +
+    geom_smooth(method = "lm", size = .7, formula = y~poly(x, degree), ...) +
     stat_summary(fun.y = geomean, geom = "point", mapping = aes(y = Titulo), size = 2) +
-    stat_poly_eq(formula = y~x,
+    stat_poly_eq(formula = y~poly(x, degree),
                  aes(label = paste(paste(..eq.label.., ..rr.label.., sep = "~~~~"))),
                  parse = TRUE,
                  label.x.npc = .675,
@@ -41,6 +41,63 @@ library(cowplot)
 theme_set(theme_gray())
 plot_grid(bb1, bb2, bb3, bb4, labels = "AUTO")
 ggsave("figuras/cinetica-dengue-all.png", width = 12, height = 14)
+
+m1 <- with(BB1[soroconversao == "não"], lm(log10(Titulo) ~ Idade) )
+m2 <- with(BB2[soroconversao == "não"], lm(log10(Titulo) ~ Idade) )
+m3 <- with(BB3[soroconversao == "não"], lm(log10(Titulo) ~ Idade) )
+m4 <- with(BB4[soroconversao == "não"], lm(log10(Titulo) ~ Idade) )
+
+m1.2 <- with(BB1[soroconversao == "não"], lm(log10(Titulo) ~ poly(Idade, 2)) )
+m2.2 <- with(BB2[soroconversao == "não"], lm(log10(Titulo) ~ poly(Idade, 2)) )
+m3.2 <- with(BB3[soroconversao == "não"], lm(log10(Titulo) ~ poly(Idade, 2)) )
+m4.2 <- with(BB4[soroconversao == "não"], lm(log10(Titulo) ~ poly(Idade, 2)) )
+
+m1.3 <- with(BB1[soroconversao == "não"], lm(log10(Titulo) ~ poly(Idade, 3)) )
+m2.3 <- with(BB2[soroconversao == "não"], lm(log10(Titulo) ~ poly(Idade, 3)) )
+m3.3 <- with(BB3[soroconversao == "não"], lm(log10(Titulo) ~ poly(Idade, 3)) )
+m4.3 <- with(BB4[soroconversao == "não"], lm(log10(Titulo) ~ poly(Idade, 3)) )
+
+anova(m1, m1.2, m1.3)
+anova(m2, m2.2, m2.3)
+anova(m3, m3.2, m3.3)
+anova(m4, m4.2, m4.3)
+
+
+# interseções -------------------------------------------------------------
+
+idade <- function(modelo, titulo) {
+  (log10(titulo) - coef(modelo)[1])/coef(modelo)[2]
+}
+
+# interceção 50 -----------------------------------------------------------
+
+# DENV1 ~ 7.6
+round(idade(m1, 50), 1)
+# 10^predict(m1, data.frame(Idade = idade(m1, 50)), interval = "conf")
+
+# DENV2 ~ 6.2
+round(idade(m2, 50),1)
+
+# DENV3 ~ 6.1
+round(idade(m3, 50), 1)
+
+# DENV4 ~ 7.2
+round(idade(m4, 50), 1)
+
+# interseção 10 -----------------------------------------------------------
+
+# DENV1 ~ 11.7
+round(idade(m1, 10), 1)
+# 10^predict(m1, data.frame(Idade = idade(m1, 50)), interval = "conf")
+
+# DENV2 ~ 9.9
+round(idade(m2, 10), 1)
+
+# DENV3 ~ 9.9
+round(idade(m3, 10), 1)
+
+# DENV4 ~ 12.1
+round(idade(m4, 10), 1)
 
 # obsoleto ----------------------------------------------------------------
 
