@@ -23,7 +23,8 @@ kin.plot <- function(dataframe) {
                  parse = TRUE,
                  label.x.npc = .675) +
     scale_color_brewer(palette="Dark2") +
-    theme(plot.subtitle = element_text(hjust = 0.5))
+    theme(plot.subtitle = element_text(hjust = 0.5),
+          legend.position = "bottom")
 }
 
 bb1 <- kin.plot(BB1) + labs(title = "A", subtitle = "Cinética de DENV1")
