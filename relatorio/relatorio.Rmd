@@ -20,6 +20,8 @@ output:
 
 ### Cinética
 
+#### Decaimento dos títulos de anticorpos neutralizantes
+
 ![**Figura xx** - Cinética de decaimento de títulos de anticorpos neutralizantes](../figuras/cinetica-dengue-all.png)
 
 #### Médias por idade
@@ -75,8 +77,6 @@ Tempo de sororreversão (título = 10)
 - DENV3 ~ 9.9 meses
 - DENV4 ~ 12.1 meses
 
-
-##### Tempo de corte de títulos 50 e 10
 
 ## Zika
 
