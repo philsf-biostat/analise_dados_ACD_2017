@@ -21,7 +21,8 @@ kin.plot <- function(dataframe) {
     stat_poly_eq(formula = y~x,
                  aes(label = paste(paste(..eq.label.., ..rr.label.., sep = "~~~~"))),
                  parse = TRUE,
-                 label.x.npc = .675) +
+                 label.x.npc = .675,
+                 label.y.npc = .975) +
     scale_color_brewer(palette="Dark2") +
     theme(plot.subtitle = element_text(hjust = 0.5),
           legend.position = "bottom")
