@@ -10,7 +10,7 @@ kin.plot <- function(dataframe) {
                         group = soroconversao,
                         shape = soroconversao)) +
     labs(color = "Soroconversão", shape = "Soroconversão") +
-    scale_y_log10() +
+    scale_y_log10(limits = c(1,3500)) +
     scale_x_continuous(breaks = seq(0,12,2)) +
     geom_hline(yintercept = c(10, 1250), linetype = "dashed") +
     # geom_boxplot() +
