@@ -20,18 +20,22 @@ output:
 
 #### Correlação
 
-![**Figura xx** - Associação entre títulos de anticorpos neutralizantes de soro materno e sangue de cordão (linear)](../figuras/assoc-linear-all.png)
-
-<!-- ![**Figura xx** - Associação entre títulos de anticorpos neutralizantes de soro materno e sangue de cordão (não-linear)](../figuras/assoc-nlinear-all.png) -->
-
-<!-- Obs: Escolher apenas um dos painés de figura acima! Não utilizar os dois! -->
-
 Os valores de correlação de Pearson para as associações são:
 
 - DENV1: r = 0.8308448, p = <0.001
 - DENV2: r = 0.4262882, p = <0.001
 - DENV3: r = 0.5217896, p = <0.001
 - DENV4: r = 0.2314973, p = 0.0804
+
+#### Regressão de Deming
+
+![**Figura xx** - Associação entre títulos de anticorpos neutralizantes de soro materno e sangue de cordão. As retas tracejadas são os limites de diluição; as retas vermelhas correspondem ao corte de 50; a reta azul é a reta de regressão de Deming.](../figuras/assoc-linear-all.png)
+
+<!-- ![**Figura xx** - Associação entre títulos de anticorpos neutralizantes de soro materno e sangue de cordão (não-linear)](../figuras/assoc-nlinear-all.png) -->
+
+<!-- Obs: Escolher apenas um dos painés de figura acima! Não utilizar os dois! -->
+
+
 
 #### Taxa de Transferência
 

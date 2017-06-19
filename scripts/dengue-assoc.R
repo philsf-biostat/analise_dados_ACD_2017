@@ -11,24 +11,34 @@ cor.test(log10(DT$sc.d4), log10(DT$sm.d4)) # r = 0.2314973, p = 0.0804
 # cor.test(DT$sc.d4, DT$sm.d4, method = "spearman") # rho = 0.5062238, p = <0.001
 
 library(ggplot2)
+library(MethComp)
 
 dengue.assoc.lin.plot <- function(x,y) {
+  model <- Deming(log10(x), log10(y))
+  icp <- model[1]
+  slp <- model[2]
   ggplot(DT, aes(x, y)) +
-    scale_x_log10() + scale_y_log10() +
-    geom_jitter(alpha = .3) +
-    geom_smooth(method = "lm", se = F) +
+    scale_x_log10(limits = c(5, 3500), breaks = c(10, 50, 100, 1000, 1250)) +
+    scale_y_log10(limits = c(5, 3500), breaks = c(10, 50, 100, 1000, 1250)) +
+    geom_hline(yintercept = c(10, 1250), linetype = "dashed") +
+    geom_vline(xintercept = c(10, 1250), linetype = "dashed") +
+    geom_hline(yintercept = 50, col = "red") +
+    geom_vline(xintercept = 50, col = "red") +
+    geom_jitter(width = .05, height = .05, alpha = .25) +
+    geom_abline(intercept = icp, slope = slp, size= 1, col = "blue") +
+    # geom_smooth(method = "lm", se = F) +
     xlab("Título soro materno") + ylab("Título sangue de cordão") +
     theme(plot.subtitle = element_text(hjust = .5))
 }
 
 d1.assoc.lin <- dengue.assoc.lin.plot(DT$sm.d1, DT$sc.d1) + labs(title = "A", subtitle = "DENV1")
-ggsave("figuras/assoc-linear-dengue1.png")
+ggsave("figuras/assoc-linear-dengue1.png", width = 6, height = 7)
 d2.assoc.lin <- dengue.assoc.lin.plot(DT$sm.d2, DT$sc.d2) + labs(title = "B", subtitle = "DENV2")
-ggsave("figuras/assoc-linear-dengue2.png")
+ggsave("figuras/assoc-linear-dengue2.png", width = 6, height = 7)
 d3.assoc.lin <- dengue.assoc.lin.plot(DT$sm.d3, DT$sc.d3) + labs(title = "C", subtitle = "DENV3")
-ggsave("figuras/assoc-linear-dengue3.png")
+ggsave("figuras/assoc-linear-dengue3.png", width = 6, height = 7)
 d4.assoc.lin <- dengue.assoc.lin.plot(DT$sm.d4, DT$sc.d4) + labs(title = "D", subtitle = "DENV4")
-ggsave("figuras/assoc-linear-dengue4.png")
+ggsave("figuras/assoc-linear-dengue4.png", width = 6, height = 7)
 
 library(cowplot)
 theme_set(theme_gray())
