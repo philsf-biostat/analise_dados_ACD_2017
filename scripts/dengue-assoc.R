@@ -32,13 +32,13 @@ dengue.assoc.lin.plot <- function(x,y) {
 }
 
 d1.assoc.lin <- dengue.assoc.lin.plot(DT$sm.d1, DT$sc.d1) + labs(title = "A", subtitle = "DENV1")
-ggsave("figuras/assoc-linear-dengue1.png")
+ggsave("figuras/assoc-linear-dengue1.png", width = 6, height = 7)
 d2.assoc.lin <- dengue.assoc.lin.plot(DT$sm.d2, DT$sc.d2) + labs(title = "B", subtitle = "DENV2")
-ggsave("figuras/assoc-linear-dengue2.png")
+ggsave("figuras/assoc-linear-dengue2.png", width = 6, height = 7)
 d3.assoc.lin <- dengue.assoc.lin.plot(DT$sm.d3, DT$sc.d3) + labs(title = "C", subtitle = "DENV3")
-ggsave("figuras/assoc-linear-dengue3.png")
+ggsave("figuras/assoc-linear-dengue3.png", width = 6, height = 7)
 d4.assoc.lin <- dengue.assoc.lin.plot(DT$sm.d4, DT$sc.d4) + labs(title = "D", subtitle = "DENV4")
-ggsave("figuras/assoc-linear-dengue4.png")
+ggsave("figuras/assoc-linear-dengue4.png", width = 6, height = 7)
 
 library(cowplot)
 theme_set(theme_gray())
