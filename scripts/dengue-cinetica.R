@@ -62,6 +62,43 @@ anova(m2, m2.2, m2.3)
 anova(m3, m3.2, m3.3)
 anova(m4, m4.2, m4.3)
 
+
+# interseções -------------------------------------------------------------
+
+idade <- function(modelo, titulo) {
+  (log10(titulo) - coef(modelo)[1])/coef(modelo)[2]
+}
+
+# interceção 50 -----------------------------------------------------------
+
+# DENV1 ~ 7.6
+round(idade(m1, 50), 1)
+# 10^predict(m1, data.frame(Idade = idade(m1, 50)), interval = "conf")
+
+# DENV2 ~ 6.2
+round(idade(m2, 50),1)
+
+# DENV3 ~ 6.1
+round(idade(m3, 50), 1)
+
+# DENV4 ~ 7.2
+round(idade(m4, 50), 1)
+
+# interseção 10 -----------------------------------------------------------
+
+# DENV1 ~ 11.7
+round(idade(m1, 10), 1)
+# 10^predict(m1, data.frame(Idade = idade(m1, 50)), interval = "conf")
+
+# DENV2 ~ 9.9
+round(idade(m2, 10), 1)
+
+# DENV3 ~ 9.9
+round(idade(m3, 10), 1)
+
+# DENV4 ~ 12.1
+round(idade(m4, 10), 1)
+
 # obsoleto ----------------------------------------------------------------
 
 # la <- data.table(
