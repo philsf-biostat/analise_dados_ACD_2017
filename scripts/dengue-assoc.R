@@ -22,13 +22,13 @@ dengue.assoc.lin.plot <- function(x,y) {
 }
 
 dengue.assoc.lin.plot(DT$sm.d1, DT$sc.d1) + labs(title = "A", subtitle = "DENV1")
-ggsave("figuras/dengue1-linear.png")
+ggsave("figuras/assoc-linear-dengue1.png")
 dengue.assoc.lin.plot(DT$sm.d2, DT$sc.d2) + labs(title = "B", subtitle = "DENV2")
-ggsave("figuras/dengue2-linear.png")
+ggsave("figuras/assoc-linear-dengue2.png")
 dengue.assoc.lin.plot(DT$sm.d3, DT$sc.d3) + labs(title = "C", subtitle = "DENV3")
-ggsave("figuras/dengue3-linear.png")
+ggsave("figuras/assoc-linear-dengue3.png")
 dengue.assoc.lin.plot(DT$sm.d4, DT$sc.d4) + labs(title = "D", subtitle = "DENV4")
-ggsave("figuras/dengue4-linear.png")
+ggsave("figuras/assoc-linear-dengue4.png")
 
 dengue.assoc.nl.plot <- function(x,y) {
   ggplot(DT, aes(x, y)) +
@@ -41,13 +41,13 @@ dengue.assoc.nl.plot <- function(x,y) {
 }
 
 dengue.assoc.nl.plot(DT$sm.d1, DT$sc.d1) + labs(title = "A", subtitle = "DENV1")
-ggsave("figuras/dengue1-naolinear.png")
+ggsave("figuras/assoc-nlinear-dengue1.png")
 dengue.assoc.nl.plot(DT$sm.d2, DT$sc.d2) + labs(title = "B", subtitle = "DENV2")
-ggsave("figuras/dengue2-naolinear.png")
+ggsave("figuras/assoc-nlinear-dengue2.png")
 dengue.assoc.nl.plot(DT$sm.d3, DT$sc.d3) + labs(title = "C", subtitle = "DENV3")
-ggsave("figuras/dengue3-naolinear.png")
+ggsave("figuras/assoc-nlinear-dengue3.png")
 dengue.assoc.nl.plot(DT$sm.d4, DT$sc.d4) + labs(title = "D", subtitle = "DENV4")
-ggsave("figuras/dengue4-naolinear.png")
+ggsave("figuras/assoc-nlinear-dengue4.png")
 
 ylim <- c(0,60)
 png("figuras/hist-dengue1.png", 700, 500); par(mfrow = c(1,2))
