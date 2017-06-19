@@ -1,0 +1,28 @@
+---
+title: "Relatório"
+author: "Felipe Figueiredo"
+date: "June 18, 2017"
+output:
+  html_document:
+    number_sections: yes
+    toc: yes
+  word_document:
+    toc: yes
+---
+
+# Métodos
+
+# Resultados
+
+## Dengue
+
+### Associação
+
+### Cinética
+
+#### Tempo de sororreversão
+
+##### Tempo de corte de títulos 50 e 10
+
+## Zika
+
