@@ -26,7 +26,8 @@ Os títulos com valores acima da última diluição (>1250) foram substituídos 
 
 ### Taxa de transferência
 
-Taxa de transferência (TR) = (valor mensurado na amostra cordão/ valor mensurado na amostra materna)*100.
+A taxa de transferência foi definida como (TT) = (valor mensurado na amostra cordão/ valor mensurado na amostra materna)*100.
+Para avaliar a TT média em cada sorotipo a média geométrica dos títulos foi utilizada. A TT média foi determinada como a razão entre as médias geométricas: (TTmédia) = (média geométrica na amostra cordão/valor mensurado na amostra materna).
 
 ### Associação entre dados numéricos
 
