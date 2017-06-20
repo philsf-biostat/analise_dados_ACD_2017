@@ -1,3 +1,5 @@
+# requisitos --------------------------------------------------------------
+
 # Ler BB1, BB2, BB3, BB4
 source("scripts/dengue-cinetica-input.R")
 
@@ -28,42 +30,14 @@ kin.plot <- function(dataframe, degree = 1, ...) {
           legend.position = "bottom")
 }
 
-bb1 <- kin.plot(BB1) + labs(title = "A", subtitle = "Cinética de DENV1")
-ggsave("figuras/cinetica-dengue1.png", width = 6, height = 7)
-bb2 <- kin.plot(BB2) + labs(title = "B", subtitle = "Cinética de DENV2")
-ggsave("figuras/cinetica-dengue2.png", width = 6, height = 7)
-bb3 <- kin.plot(BB3) + labs(title = "C", subtitle = "Cinética de DENV3")
-ggsave("figuras/cinetica-dengue3.png", width = 6, height = 7)
-bb4 <- kin.plot(BB4) + labs(title = "D", subtitle = "Cinética de DENV4")
-ggsave("figuras/cinetica-dengue4.png", width = 6, height = 7)
-
-library(cowplot)
-theme_set(theme_gray())
-plot_grid(bb1, bb2, bb3, bb4, labels = "AUTO")
-ggsave("figuras/cinetica-dengue-all.png", width = 12, height = 14)
+# regressão linear - modelos ----------------------------------------------
 
 m1 <- with(BB1[soroconversao == "não"], lm(log10(Titulo) ~ Idade) )
 m2 <- with(BB2[soroconversao == "não"], lm(log10(Titulo) ~ Idade) )
 m3 <- with(BB3[soroconversao == "não"], lm(log10(Titulo) ~ Idade) )
 m4 <- with(BB4[soroconversao == "não"], lm(log10(Titulo) ~ Idade) )
 
-m1.2 <- with(BB1[soroconversao == "não"], lm(log10(Titulo) ~ poly(Idade, 2)) )
-m2.2 <- with(BB2[soroconversao == "não"], lm(log10(Titulo) ~ poly(Idade, 2)) )
-m3.2 <- with(BB3[soroconversao == "não"], lm(log10(Titulo) ~ poly(Idade, 2)) )
-m4.2 <- with(BB4[soroconversao == "não"], lm(log10(Titulo) ~ poly(Idade, 2)) )
-
-m1.3 <- with(BB1[soroconversao == "não"], lm(log10(Titulo) ~ poly(Idade, 3)) )
-m2.3 <- with(BB2[soroconversao == "não"], lm(log10(Titulo) ~ poly(Idade, 3)) )
-m3.3 <- with(BB3[soroconversao == "não"], lm(log10(Titulo) ~ poly(Idade, 3)) )
-m4.3 <- with(BB4[soroconversao == "não"], lm(log10(Titulo) ~ poly(Idade, 3)) )
-
-anova(m1, m1.2, m1.3)
-anova(m2, m2.2, m2.3)
-anova(m3, m3.2, m3.3)
-anova(m4, m4.2, m4.3)
-
-
-# interseções -------------------------------------------------------------
+# regressão linear - interseções ------------------------------------------
 
 idade <- function(modelo, titulo) {
   (log10(titulo) - coef(modelo)[1])/coef(modelo)[2]
@@ -98,6 +72,50 @@ round(idade(m3, 10), 1)
 
 # DENV4 ~ 12.1
 round(idade(m4, 10), 1)
+
+# regressão linear - gráficos ---------------------------------------------
+
+bb1.lin <- kin.plot(BB1) + labs(title = "A", subtitle = "Cinética de DENV1")
+ggsave("figuras/cinetica-dengue1.png", width = 6, height = 7)
+bb2.lin <- kin.plot(BB2) + labs(title = "B", subtitle = "Cinética de DENV2")
+ggsave("figuras/cinetica-dengue2.png", width = 6, height = 7)
+bb3.lin <- kin.plot(BB3) + labs(title = "C", subtitle = "Cinética de DENV3")
+ggsave("figuras/cinetica-dengue3.png", width = 6, height = 7)
+bb4.lin <- kin.plot(BB4) + labs(title = "D", subtitle = "Cinética de DENV4")
+ggsave("figuras/cinetica-dengue4.png", width = 6, height = 7)
+
+library(cowplot)
+theme_set(theme_gray())
+plot_grid(bb1.lin, bb2.lin, bb3.lin, bb4.lin, labels = "AUTO")
+ggsave("figuras/cinetica-dengue-all.png", width = 12, height = 14)
+
+# regressão polinomial - modelos ------------------------------------------
+
+m1.2 <- with(BB1[soroconversao == "não"], lm(log10(Titulo) ~ poly(Idade, 2)) )
+m2.2 <- with(BB2[soroconversao == "não"], lm(log10(Titulo) ~ poly(Idade, 2)) )
+m3.2 <- with(BB3[soroconversao == "não"], lm(log10(Titulo) ~ poly(Idade, 2)) )
+m4.2 <- with(BB4[soroconversao == "não"], lm(log10(Titulo) ~ poly(Idade, 2)) )
+
+m1.3 <- with(BB1[soroconversao == "não"], lm(log10(Titulo) ~ poly(Idade, 3)) )
+m2.3 <- with(BB2[soroconversao == "não"], lm(log10(Titulo) ~ poly(Idade, 3)) )
+m3.3 <- with(BB3[soroconversao == "não"], lm(log10(Titulo) ~ poly(Idade, 3)) )
+m4.3 <- with(BB4[soroconversao == "não"], lm(log10(Titulo) ~ poly(Idade, 3)) )
+
+anova(m1, m1.2, m1.3)
+anova(m2, m2.2, m2.3)
+anova(m3, m3.2, m3.3)
+anova(m4, m4.2, m4.3)
+
+# regressão polinomial - gráficos -----------------------------------------
+
+bb1.poly <- kin.plot(BB1, degree = 3) + labs(title = "A", subtitle = "Cinética de DENV1")
+# ggsave("figuras/cinetica-dengue1.png", width = 6, height = 7)
+bb2.poly <- kin.plot(BB2, 2) + labs(title = "B", subtitle = "Cinética de DENV2")
+# ggsave("figuras/cinetica-dengue2.png", width = 6, height = 7)
+bb3.poly <- kin.plot(BB3, 2) + labs(title = "C", subtitle = "Cinética de DENV3")
+# ggsave("figuras/cinetica-dengue3.png", width = 6, height = 7)
+bb4.poly <- kin.plot(BB4, 2) + labs(title = "D", subtitle = "Cinética de DENV4")
+# ggsave("figuras/cinetica-dengue4.png", width = 6, height = 7)
 
 # obsoleto ----------------------------------------------------------------
 

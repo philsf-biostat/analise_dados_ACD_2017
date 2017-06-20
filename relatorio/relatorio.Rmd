@@ -13,6 +13,34 @@ output:
 
 # Métodos
 
+## Análise estatística
+
+Todos os tratamentos e as análises dos dados foram realizados no software estatístico R, versão `r getRversion()` (https://www.R-project.org).
+
+Em todas as análises foi utilizado o nível de significância de 5%.
+
+### Tratamento dos dados
+
+Os títulos com valores abaixo da primeira diluição (<10) foram substituídos por 5.
+Os títulos com valores acima da última diluição (>1250) foram substituídos por 2500.
+Os títulos foram comparados usando o teste t de Student pareado, após transformação para escala logarítmica (base 10).
+
+### Cinética de Dengue
+
+A cinética de dengue foi estimada usando regressão linear simples entre os títulos de anticorpos neutralizantes e a idade dos bebês.
+O tempo de sororreversão foi calculado como o ponto de interseção entre os valores de referência 50 e o limite de detecção da primeira diluição (título 10).
+
+### Associação entre soro materno e sangue de cordão
+
+A o grau e direção da associação entre dados numéricos foi analisada com o coeficiente de correlação de Pearson, após transformação pelo logaritmo.
+
+A tendência de associação foi observada usando a regressão de Deming, que é capaz de avaliar simultaneamente as variabilidades experimentais de ambos os dados.
+
+#### Taxa de transferência
+
+A taxa de transferência foi definida como (TT) = (valor mensurado na amostra cordão/ valor mensurado na amostra materna)*100.
+Para avaliar a TT média em cada sorotipo a média geométrica dos títulos foi utilizada. A TT média foi determinada como a razão entre as médias geométricas: (TTmédia) = (média geométrica na amostra cordão/valor mensurado na amostra materna).
+
 # Resultados
 
 ## Dengue
@@ -35,8 +63,6 @@ Os valores de correlação de Pearson para as associações são:
 <!-- ![**Figura xx** - Associação entre títulos de anticorpos neutralizantes de soro materno e sangue de cordão (não-linear)](../figuras/assoc-nlinear-all.png) -->
 
 <!-- Obs: Escolher apenas um dos painés de figura acima! Não utilizar os dois! -->
-
-
 
 #### Taxa de Transferência
 
