@@ -23,6 +23,7 @@ Em todas as análises foi utilizado o nível de significância de 5%.
 
 Os títulos com valores abaixo da primeira diluição (<10) foram substituídos por 5.
 Os títulos com valores acima da última diluição (>1250) foram substituídos por 2500.
+Os títulos foram comparados usando o teste t de Student pareado, após transformação para escala logarítmica (base 10).
 
 ### Taxa de transferência
 
