@@ -13,6 +13,32 @@ output:
 
 # Métodos
 
+## Variáveis coletadas no estudo
+
+Para a análise dos dados foram coletados dados das seguintes variáveis: gênero, tipo histológico, presença de metástase, ocorrência de óbito, tipo de cirurgia, estadiamento.
+Além destas variáveis, foram coletadas a data do início dos sintomas e a data do diagnóstico, que foram utilizadas para estimar o tempo de diagnóstico conforme descrito na seção seguinte.
+
+### Tratamento dos dados
+
+Os títulos com valores abaixo da primeira diluição (<10) foram substituídos por 5.
+Os títulos com valores acima da última diluição (>1250) foram substituídos por 2500.
+
+## Análise estatística
+
+Todos os tratamentos e as análises dos dados foram realizados no software estatístico R, versão `r getRversion()` (https://www.R-project.org).
+
+Em todas as análises foi utilizado o nível de significância de 5%.
+
+### Taxa de transferência
+
+Taxa de transferência (TR) = (valor mensurado na amostra cordão/ valor mensurado na amostra materna)*100.
+
+### Associação entre dados numéricos
+
+A o grau e direção da associação entre dados numéricos foi analisada com o coeficiente de correlação de Pearson, após transformação pelo logaritmo.
+
+A tendência de associação foi observada usando a reta de regressão linear
+
 # Resultados
 
 ## Dengue
