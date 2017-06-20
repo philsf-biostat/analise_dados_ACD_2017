@@ -13,21 +13,16 @@ output:
 
 # Métodos
 
-## Variáveis coletadas no estudo
-
-Para a análise dos dados foram coletados dados das seguintes variáveis: gênero, tipo histológico, presença de metástase, ocorrência de óbito, tipo de cirurgia, estadiamento.
-Além destas variáveis, foram coletadas a data do início dos sintomas e a data do diagnóstico, que foram utilizadas para estimar o tempo de diagnóstico conforme descrito na seção seguinte.
-
-### Tratamento dos dados
-
-Os títulos com valores abaixo da primeira diluição (<10) foram substituídos por 5.
-Os títulos com valores acima da última diluição (>1250) foram substituídos por 2500.
-
 ## Análise estatística
 
 Todos os tratamentos e as análises dos dados foram realizados no software estatístico R, versão `r getRversion()` (https://www.R-project.org).
 
 Em todas as análises foi utilizado o nível de significância de 5%.
+
+### Tratamento dos dados
+
+Os títulos com valores abaixo da primeira diluição (<10) foram substituídos por 5.
+Os títulos com valores acima da última diluição (>1250) foram substituídos por 2500.
 
 ### Taxa de transferência
 
@@ -61,8 +56,6 @@ Os valores de correlação de Pearson para as associações são:
 <!-- ![**Figura xx** - Associação entre títulos de anticorpos neutralizantes de soro materno e sangue de cordão (não-linear)](../figuras/assoc-nlinear-all.png) -->
 
 <!-- Obs: Escolher apenas um dos painés de figura acima! Não utilizar os dois! -->
-
-
 
 #### Taxa de Transferência
 
