@@ -25,6 +25,11 @@ Os títulos com valores abaixo da primeira diluição (<10) foram substituídos 
 Os títulos com valores acima da última diluição (>1250) foram substituídos por 2500.
 Os títulos foram comparados usando o teste t de Student pareado, após transformação para escala logarítmica (base 10).
 
+### Cinética de Dengue
+
+A cinética de dengue foi estimada usando regressão linear simples entre os títulos de anticorpos neutralizantes e a idade dos bebês.
+O tempo de sororreversão foi calculado como o ponto de interseção entre os valores de referência 50 e o limite de detecção da primeira diluição (título 10).
+
 ### Associação entre soro materno e sangue de cordão
 
 A o grau e direção da associação entre dados numéricos foi analisada com o coeficiente de correlação de Pearson, após transformação pelo logaritmo.
