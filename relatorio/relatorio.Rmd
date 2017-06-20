@@ -29,11 +29,11 @@ Os títulos com valores acima da última diluição (>1250) foram substituídos 
 A taxa de transferência foi definida como (TT) = (valor mensurado na amostra cordão/ valor mensurado na amostra materna)*100.
 Para avaliar a TT média em cada sorotipo a média geométrica dos títulos foi utilizada. A TT média foi determinada como a razão entre as médias geométricas: (TTmédia) = (média geométrica na amostra cordão/valor mensurado na amostra materna).
 
-### Associação entre dados numéricos
+### Associação entre soro materno e sangue de cordão
 
 A o grau e direção da associação entre dados numéricos foi analisada com o coeficiente de correlação de Pearson, após transformação pelo logaritmo.
 
-A tendência de associação foi observada usando a reta de regressão linear
+A tendência de associação foi observada usando a regressão de Deming, que é capaz de avaliar simultaneamente as variabilidades experimentais de ambos os dados.
 
 # Resultados
 
