@@ -25,16 +25,16 @@ Os títulos com valores abaixo da primeira diluição (<10) foram substituídos 
 Os títulos com valores acima da última diluição (>1250) foram substituídos por 2500.
 Os títulos foram comparados usando o teste t de Student pareado, após transformação para escala logarítmica (base 10).
 
-### Taxa de transferência
-
-A taxa de transferência foi definida como (TT) = (valor mensurado na amostra cordão/ valor mensurado na amostra materna)*100.
-Para avaliar a TT média em cada sorotipo a média geométrica dos títulos foi utilizada. A TT média foi determinada como a razão entre as médias geométricas: (TTmédia) = (média geométrica na amostra cordão/valor mensurado na amostra materna).
-
 ### Associação entre soro materno e sangue de cordão
 
 A o grau e direção da associação entre dados numéricos foi analisada com o coeficiente de correlação de Pearson, após transformação pelo logaritmo.
 
 A tendência de associação foi observada usando a regressão de Deming, que é capaz de avaliar simultaneamente as variabilidades experimentais de ambos os dados.
+
+#### Taxa de transferência
+
+A taxa de transferência foi definida como (TT) = (valor mensurado na amostra cordão/ valor mensurado na amostra materna)*100.
+Para avaliar a TT média em cada sorotipo a média geométrica dos títulos foi utilizada. A TT média foi determinada como a razão entre as médias geométricas: (TTmédia) = (média geométrica na amostra cordão/valor mensurado na amostra materna).
 
 # Resultados
 
