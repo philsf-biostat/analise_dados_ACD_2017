@@ -6,31 +6,25 @@ June 18, 2017
 
 ## Análise estatística
 
-Todos os tratamentos e as análises dos dados foram realizados no software estatístico R, versão 3.4.0 (https://www.R-project.org).
-
-Em todas as análises foi utilizado o nível de significância de 5%.
-
-### Tratamento dos dados
-
+<!-- ### Tratamento dos dados -->
 Os títulos com valores abaixo da primeira diluição (<10) foram substituídos por 5.
 Os títulos com valores acima da última diluição (>1250) foram substituídos por 2500.
 Os títulos foram comparados usando o teste t de Student pareado, após transformação para escala logarítmica (base 10).
-
-### Cinética de Dengue
-
-A cinética de dengue foi estimada usando regressão linear simples entre os títulos de anticorpos neutralizantes e a idade dos bebês.
-O tempo de sororreversão foi calculado como o ponto de interseção entre os valores de referência 50 e o limite de detecção da primeira diluição (título 10).
-
-### Associação entre soro materno e sangue de cordão
-
+<!-- ### Associação entre soro materno e sangue de cordão -->
 A o grau e direção da associação entre dados numéricos foi analisada com o coeficiente de correlação de Pearson, após transformação pelo logaritmo.
-
 A tendência de associação foi observada usando a regressão de Deming, que é capaz de avaliar simultaneamente as variabilidades experimentais de ambos os dados.
-
-#### Taxa de transferência
-
 A taxa de transferência foi definida como (TT) = (valor mensurado na amostra cordão/ valor mensurado na amostra materna)*100.
 Para avaliar a TT média em cada sorotipo a média geométrica dos títulos foi utilizada. A TT média foi determinada como a razão entre as médias geométricas: (TTmédia) = (média geométrica na amostra cordão/valor mensurado na amostra materna).
+<!-- ### Cinética de Dengue -->
+A cinética de dengue foi estimada usando regressão linear simples entre os títulos de anticorpos neutralizantes e a idade dos bebês.
+O tempo de sororreversão foi calculado como o ponto de interseção entre os valores de referência 50 e o limite de detecção da primeira diluição (título 10).
+<!-- ### Software -->
+Todos os tratamentos e as análises dos dados foram realizados no software estatístico R, versão 3.4.0 (https://www.R-project.org).
+A regressão de Deming foi calculada com o pacote `MethComp` (versão 1.22.2).
+Os intervalos de confiança exatos das proporções foram calculados usando-se o pacote `exactci` (versão 1.3.1), contra a hipótese nula de que a proporção era igual a 50%.
+
+Em todas as análises foi utilizado o nível de significância de 5%.
+
 
 # Resultados
 
@@ -188,8 +182,6 @@ Avaliação contra DENV1, com razão >3.
 
  287       2016-06-09         530.1      <1:10    
 
- 305       2016-07-08         44.16      <1:10    
-
  329       2015-10-16         670.4      17.67    
 
  373       2016-05-20         436.8      <1:10    
@@ -203,8 +195,6 @@ Avaliação contra DENV1, com razão >3.
  467       2016-07-04         586.9      <1:10    
 
  541       2015-04-16         443.1      15.34    
-
- 541       2016-06-29         43.78      <1:10    
 --------------------------------------------------
 
 Table: **Tabela xx:** Avaliação dos níveis de anticorpos neutralizantes para investigação da reação cruzada do PRNT anti-Zika e anti-Dengue em 20 crianças da coorte acompanhada neste estudo.
