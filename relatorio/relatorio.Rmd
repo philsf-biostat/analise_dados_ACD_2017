@@ -197,8 +197,6 @@ Avaliação contra DENV1, com razão >3.
 
  287       2016-06-09         530.1      <1:10    
 
- 305       2016-07-08         44.16      <1:10    
-
  329       2015-10-16         670.4      17.67    
 
  373       2016-05-20         436.8      <1:10    
@@ -212,8 +210,6 @@ Avaliação contra DENV1, com razão >3.
  467       2016-07-04         586.9      <1:10    
 
  541       2015-04-16         443.1      15.34    
-
- 541       2016-06-29         43.78      <1:10    
 --------------------------------------------------
 
 Table: **Tabela xx:** Avaliação dos níveis de anticorpos neutralizantes para investigação da reação cruzada do PRNT anti-Zika e anti-Dengue em 20 crianças da coorte acompanhada neste estudo.
