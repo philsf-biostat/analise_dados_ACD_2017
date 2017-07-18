@@ -16,6 +16,7 @@ output:
 ## Análise estatística
 
 Todos os tratamentos e as análises dos dados foram realizados no software estatístico R, versão `r getRversion()` (https://www.R-project.org).
+Os intervalos de confiança exatos das proporções foram calculados usando-se o pacote `exactci` (versão `r packageVersion("exactci")`), e a regressão de Deming foi calculada com o pacote `MethComp` (versão `r packageVersion("MethComp")`).
 
 Em todas as análises foi utilizado o nível de significância de 5%.
 

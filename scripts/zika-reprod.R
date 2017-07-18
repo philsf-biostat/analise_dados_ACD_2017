@@ -25,6 +25,7 @@ n1.r4 <- length((ZD1.r4$reg)) # Razao >4
 n4.r4 <- length((ZD4.r4$reg)) # Razao >4
 
 # testes binomiais
+library(exactci)
 binom.exact(n1.r3,N)
 binom.exact(n1.r4,N)
 binom.exact(n4.r3,N)
