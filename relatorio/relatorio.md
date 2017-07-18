@@ -6,7 +6,7 @@ June 18, 2017
 
 ## Análise estatística
 
-Todos os tratamentos e as análises dos dados foram realizados no software estatístico R, versão 3.3.3 (https://www.R-project.org).
+Todos os tratamentos e as análises dos dados foram realizados no software estatístico R, versão 3.4.0 (https://www.R-project.org).
 
 Em todas as análises foi utilizado o nível de significância de 5%.
 
@@ -116,3 +116,96 @@ Tempo de sororreversão (título = 10)
 
 ## Zika
 
+--------------------------------------------------
+ reg   Data_coleta_Rexames   PRNT 90   PRNT 50 D1 
+----- --------------------- --------- ------------
+ 49        2016-01-11         708.3      116.67   
+
+ 49        2016-09-19         501.5      64.81    
+
+ 62        2016-01-18         160.3      52.05    
+
+ 91        2016-09-29         406.1      15.42    
+
+ 138       2016-02-04         430.3      116.67   
+
+ 177       2016-05-20         978.3      <1:10    
+
+ 197       2016-06-09         984.1      43.35    
+
+ 220       2015-06-25         262.9      83.33    
+
+ 239       2016-07-25         779.8      <1:10    
+
+ 280       2016-05-13         810.3      105.56   
+
+ 287       2016-06-09         530.1       36.7    
+
+ 329       2015-10-16         670.4       36.7    
+
+ 373       2016-05-20         436.8      21.35    
+
+ 376       2016-05-12         377.1      73.81    
+
+ 405       2016-06-28         182.8      <1:10    
+
+ 467       2016-07-04         586.9      <1:10    
+--------------------------------------------------
+
+Table: **Tabela xx:** Avaliação dos níveis de anticorpos neutralizantes para investigação da reação cruzada do PRNT anti-Zika e anti-Dengue em 20 crianças da coorte acompanhada neste estudo.
+Avaliação contra DENV1, com razão >3.
+
+--------------------------------------------------
+ reg   Data_coleta_Rexames   PRNT 90   PRNT 50 D4 
+----- --------------------- --------- ------------
+ 49        2016-01-11         708.3      <1:10    
+
+ 49        2016-09-19         501.5      <1:10    
+
+ 60        2016-01-07         274.8      <1:10    
+
+ 62        2016-01-18         160.3      <1:10    
+
+ 82        2016-05-12         633.3      <1:10    
+
+ 91        2016-09-29         406.1      <1:10    
+
+ 138       2016-02-04         430.3      <1:10    
+
+ 153       2016-09-23         157.1      <1:10    
+
+ 177       2016-05-20         978.3      <1:10    
+
+ 197       2016-06-09         984.1      245.33   
+
+ 220       2015-06-25         262.9      <1:10    
+
+ 239       2016-07-25         779.8      <1:10    
+
+ 262       2016-08-23         122.8      <1:10    
+
+ 280       2016-05-13         810.3      25.65    
+
+ 287       2016-06-09         530.1      <1:10    
+
+ 305       2016-07-08         44.16      <1:10    
+
+ 329       2015-10-16         670.4      17.67    
+
+ 373       2016-05-20         436.8      <1:10    
+
+ 376       2016-05-12         377.1      <1:10    
+
+ 376       2015-10-15         530.1      <1:10    
+
+ 405       2016-06-28         182.8      <1:10    
+
+ 467       2016-07-04         586.9      <1:10    
+
+ 541       2015-04-16         443.1      15.34    
+
+ 541       2016-06-29         43.78      <1:10    
+--------------------------------------------------
+
+Table: **Tabela xx:** Avaliação dos níveis de anticorpos neutralizantes para investigação da reação cruzada do PRNT anti-Zika e anti-Dengue em 20 crianças da coorte acompanhada neste estudo.
+Avaliação contra DENV4, com razão >3.
