@@ -7,19 +7,28 @@ N <- length((ZK[Data_coleta_Rexames !=2017 &
                 ,.(reg, Data_coleta_Rexames,  `PRNT 90`, `PRNT 50 D1`, `PRNT 50 D4`)]$reg))
 
 ZD1 <- ZK[Data_coleta_Rexames != 2017 &
-            `PRNT 90` >= 50 &
-            `PRNT 90`/`PRNT 50 D1` >= 3,
+            `PRNT 90` >= 50,
           .(reg, Data_coleta_Rexames,  `PRNT 90`, `PRNT 50 D1`)]
 ZD4 <- ZK[Data_coleta_Rexames != 2017 &
-            `PRNT 90` >= 50 &
-            `PRNT 90`/`PRNT 50 D4` >= 3,
+            `PRNT 90` >= 50,
           .(reg, Data_coleta_Rexames,  `PRNT 90`, `PRNT 50 D4`)]
 
-ZD1$`PRNT 50 D1` <- data.replace(ZD1$`PRNT 50 D1`, "<1:10", 5)
-ZD4$`PRNT 50 D4` <- data.replace(ZD4$`PRNT 50 D4`, "<1:10", 5)
+ZD1.r3 <- ZD1[`PRNT 90`/`PRNT 50 D1` >= 3,]
+ZD1.r4 <- ZD1[`PRNT 90`/`PRNT 50 D1` >= 4,]
+ZD4.r3 <- ZD4[`PRNT 90`/`PRNT 50 D4` >= 3,]
+ZD4.r4 <- ZD4[`PRNT 90`/`PRNT 50 D4` >= 4,]
 
-n1 <- length((ZD1$reg))
-n4 <- length((ZD4$reg))
+# n de cada condição testada
+n1.r3 <- length((ZD1.r3$reg)) # Razao >3
+n4.r3 <- length((ZD4.r3$reg)) # Razao >3
+n1.r4 <- length((ZD1.r4$reg)) # Razao >4
+n4.r4 <- length((ZD4.r4$reg)) # Razao >4
 
-binom.exact(n1,N)
-binom.exact(n4,N)
+# testes binomiais
+binom.exact(n1.r3,N)
+binom.exact(n1.r4,N)
+binom.exact(n4.r3,N)
+binom.exact(n4.r4,N)
+
+# ZD1$`PRNT 50 D1` <- data.replace(ZD1$`PRNT 50 D1`, "<1:10", 5)
+# ZD4$`PRNT 50 D4` <- data.replace(ZD4$`PRNT 50 D4`, "<1:10", 5)
