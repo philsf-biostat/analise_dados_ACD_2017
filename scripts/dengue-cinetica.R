@@ -5,6 +5,8 @@ source("scripts/dengue-cinetica-input.R")
 
 library(ggplot2)
 library(ggpmisc)
+library(cowplot)
+library(philsfmisc)
 
 kin.plot <- function(dataframe, degree = 1, ...) {
   ggplot(dataframe, aes(Idade, Titulo,
