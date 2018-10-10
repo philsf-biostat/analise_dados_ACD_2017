@@ -1,8 +1,8 @@
 library(readxl)
 library(data.table)
-source("../../PDPIV/bridging/bridging-analysis.R")
+library(bridging)
 clean.data <- function(dataframe) {
-  dataframe$Titulo <- data.replace(dataframe$Titulo, 2500, 1250)
+  dataframe$Titulo <- data_replace(dataframe$Titulo, 2500, 1250)
   dataframe <- data.table(dataframe)
   dataframe <- dataframe[Idade <= 12]
   dataframe$soroconversao <- factor(dataframe$soroconversao)
